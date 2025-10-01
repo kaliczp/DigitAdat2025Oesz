@@ -13,8 +13,14 @@ read.table("kőriskárok 2012 2024.csv", sep = ";")
 ## Hozzunk létre objektumot!
 kk24 = read.table("kőriskárok 2012 2024.csv", sep = ";")
 ## Tudjunk meg többet a létrehozott kk24 objektumról.
-str(kk24)
-kk24 = read.table("kőriskárok 2012 2024.csv", sep = ";", head = T)
-str(kk24)
+str(kk24) # str() függvény a változókat írja a dollárjel után 
+## Minden karakter. A fejléc szövege miatt.
+?read.table # kézikönyv olvasása, vagy az Import/Export kézikönyvé
+kk24 = read.table("kőriskárok 2012 2024.csv", sep = ";", head = T) # header argumentum beállítva rövidítve
+kk24 = read.table("kőriskárok 2012 2024.csv", sep = ";", header = TRUE) # vagy teljesen kiírva
+str(kk24) # Most már látszanak a fejléc nevek, de a tizedes vesszőnk nem lett felismerve
+## Kézikönyv -> dec argumentumba meg kell adni a karaktert.
 kk24 = read.table("kőriskárok 2012 2024.csv", sep = ";", head = T, dec = ",")
+str(kk24) # Már amit kell számnak értelmez. int rövid egész, num racionális szám
+## az = jellele egyenértékű a <-, azaz kisebb jel és kötőjel
 kk24 <- read.table("kőriskárok 2012 2024.csv", sep = ";", head = T, dec = ",")
