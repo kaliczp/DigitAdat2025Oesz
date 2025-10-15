@@ -15,3 +15,4 @@ summary(Galand)
 summary(Galand$Faj)
 summary(Galand$darab)
 summary(Galand$Homérséklet)
+## Megjelenési dinamika és mi hat rá. Időben, évszakban, hónapban.
