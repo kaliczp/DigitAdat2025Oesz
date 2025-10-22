@@ -1,6 +1,6 @@
 ## Galandfere.xlsx mappába másolása
 dir() # Ellenőrzöm, hogy sikerüólt-e a másolás
-install.packages("readxl") # Telepítés
+# install.packages("readxl") # Telepítés, ha kell a kommentet törölni
 library(readxl) # Csomag betöltése
 search() # betöltött csomagok (keresési útvonal)
 ls() # munkakörnyezetben szereplő objektumok
