@@ -17,6 +17,7 @@ summary(Galand$darab)
 summary(Galand$Homérséklet)
 ## A numerikus változó esetében a summary dolgainak megjelenítése
 boxplot(Galand$Homérséklet)
+quantile(Galand$Homérséklet) # kvantilisek a boxplothoz
 
 
 ## Megjelenési dinamika és mi hat rá. Időben, évszakban, hónapban.
