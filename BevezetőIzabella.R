@@ -15,4 +15,8 @@ summary(Galand)
 summary(Galand$Faj)
 summary(Galand$darab)
 summary(Galand$Homérséklet)
+## A numerikus változó esetében a summary dolgainak megjelenítése
+boxplot(Galand$Homérséklet)
+
+
 ## Megjelenési dinamika és mi hat rá. Időben, évszakban, hónapban.
