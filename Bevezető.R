@@ -33,3 +33,17 @@ str(kk12) # Struktúra
 summary(kk12) ## Összefoglalás, mindne objektumon működik
 kk13 <- as.data.frame(read_excel("kőriskárok 2012 2024.xlsx", 2)) ## Második munkalap (sheet)
 summary(kk13) ## Összefoglalás a másodi objektumról
+kk14 <- as.data.frame(read_excel("kőriskárok 2012 2024.xlsx", "2014")) ## harmadik munkalap argumentum hivatkozásnélkül szövegként
+kk15 <- as.data.frame(read_excel("kőriskárok 2012 2024.xlsx", sheet = "2015")) ## harmadik munkalap argumentum hivatkozással szövegként
+summary(kk15)
+names(kk15) # nevek
+boxplot(kk15[,c(9,10)]) # Doboz ábra indexeléssel
+boxplot(kk15[,c("Gyakoriság", "Kárerély")]) # Doboz ábra indexeléssel név alapján
+boxplot(kk14[,c("Gyakoriság", "Kárerély")]) # Csak az objektum nevet írom át
+boxplot(kk13[,c("GYAKORISAG", "KARERELY")]) # Csak az objektum nevet írom át
+kk16 <- as.data.frame(read_excel("kőriskárok 2012 2024.xlsx", sheet = "2016")) ## harmadik munkalap argumentum hivatkozással szövegként
+boxplot(kk16[,c("Gyakoriság", "Kárerély")])
+
+for(ev in 14:24) {
+    assign(paste0("kk", ev), as.data.frame(read_excel("kőriskárok 2012 2024.xlsx", sheet = paste0("20",ev))))
+}
