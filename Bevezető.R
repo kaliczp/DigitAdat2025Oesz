@@ -47,3 +47,4 @@ boxplot(kk16[,c("Gyakoriság", "Kárerély")])
 for(ev in 14:24) {
     assign(paste0("kk", ev), as.data.frame(read_excel("kőriskárok 2012 2024.xlsx", sheet = paste0("20",ev))))
 }
+
