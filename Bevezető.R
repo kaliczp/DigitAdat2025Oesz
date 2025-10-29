@@ -74,3 +74,4 @@ for(ev in 14:24) {
     akt_table$Kod <- row.names(akt_table)
     fin_table <- merge(fin_table, akt_table, by = "Kod", all = TRUE)
 }
+write.csv2(fin_table, "fin_table.csv")
