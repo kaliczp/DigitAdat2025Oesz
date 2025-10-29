@@ -48,3 +48,7 @@ for(ev in 14:24) {
     assign(paste0("kk", ev), as.data.frame(read_excel("kőriskárok 2012 2024.xlsx", sheet = paste0("20",ev))))
 }
 
+par(mfrow = c(4,3))
+for(ev in 13:24) {
+    boxplot(get(paste0("kk",ev))[,9:10], main = paste0("20",ev))
+}
