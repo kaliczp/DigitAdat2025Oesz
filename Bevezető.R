@@ -61,7 +61,7 @@ for(ev in 13:24) {
 }
 
 ## Kőrispusztulás / év
-par(mfrow = c(4,3), mar=c(0.5,0.5,3.1,0.5))
+par(mfrow = c(4,3), mar=c(0.1,0.1,0.7,0.1))
 for(ev in 13:24) {
     akt_summ <- summary(factor(get(paste0("kk",ev))[,7]))
     pie(akt_summ, labels = names(akt_summ), main = paste0("20",ev))
