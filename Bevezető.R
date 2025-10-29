@@ -60,9 +60,17 @@ for(ev in 13:24) {
     pie(akt_summ, labels = names(akt_summ), main = paste0("20",ev))
 }
 
-## Kőrispusztulás / év
-par(mfrow = c(4,3), mar=c(0.1,0.1,0.7,0.1))
-for(ev in 13:24) {
+ev <- 13
+akt_summ <- summary(factor(get(paste0("kk",ev))[,7]))
+akt_table <- as.data.frame(akt_summ)
+names(akt_table) <- paste0("db",ev)
+akt_table$Kod <- row.names(akt_table)
+fin_table <- akt_table
+## Táblázatosan
+for(ev in 14:24) {
     akt_summ <- summary(factor(get(paste0("kk",ev))[,7]))
-    pie(akt_summ, labels = names(akt_summ), main = paste0("20",ev))
+    akt_table <- as.data.frame(akt_summ)
+    names(akt_table) <- paste0("db",ev)
+    akt_table$Kod <- row.names(akt_table)
+    fin_table <- merge(fin_table, akt_table, by = "Kod", all = TRUE)
 }
