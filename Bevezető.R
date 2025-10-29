@@ -24,3 +24,8 @@ kk24 = read.table("kőriskárok 2012 2024.csv", sep = ";", head = T, dec = ",")
 str(kk24) # Már amit kell számnak értelmez. int rövid egész, num racionális szám
 ## az = jellele egyenértékű a <-, azaz kisebb jel és kötőjel
 kk24 <- read.table("kőriskárok 2012 2024.csv", sep = ";", head = T, dec = ",")
+
+## Excel közvetlen beolvasása
+## install.packages("readxl") # ha hibát jelez az alábbi, telepíteni kell a csomagot
+library(readxl)
+kk12 <- as.data.frame(read_excel("kőriskárok 2012 2024.xlsx"))
