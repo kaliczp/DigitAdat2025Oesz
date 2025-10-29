@@ -28,4 +28,8 @@ kk24 <- read.table("kőriskárok 2012 2024.csv", sep = ";", head = T, dec = ",")
 ## Excel közvetlen beolvasása
 ## install.packages("readxl") # ha hibát jelez az alábbi, telepíteni kell a csomagot
 library(readxl)
-kk12 <- as.data.frame(read_excel("kőriskárok 2012 2024.xlsx"))
+kk12 <- as.data.frame(read_excel("kőriskárok 2012 2024.xlsx")) ## Alapértelmezetten az első munkalap (sheet)
+str(kk12) # Struktúra
+summary(kk12) ## Összefoglalás, mindne objektumon működik
+kk13 <- as.data.frame(read_excel("kőriskárok 2012 2024.xlsx", 2)) ## Második munkalap (sheet)
+summary(kk13) ## Összefoglalás a másodi objektumról
