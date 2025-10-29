@@ -52,3 +52,17 @@ par(mfrow = c(4,3))
 for(ev in 13:24) {
     boxplot(get(paste0("kk",ev))[,9:10], main = paste0("20",ev))
 }
+
+## Kőrispusztulás / év
+par(mfrow = c(4,3), mar=c(0.5,0.5,3.1,0.5))
+for(ev in 13:24) {
+    akt_summ <- summary(factor(get(paste0("kk",ev))[,7]))
+    pie(akt_summ, labels = names(akt_summ), main = paste0("20",ev))
+}
+
+## Kőrispusztulás / év
+par(mfrow = c(4,3), mar=c(0.5,0.5,3.1,0.5))
+for(ev in 13:24) {
+    akt_summ <- summary(factor(get(paste0("kk",ev))[,7]))
+    pie(akt_summ, labels = names(akt_summ), main = paste0("20",ev))
+}
