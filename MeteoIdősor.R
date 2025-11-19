@@ -14,3 +14,16 @@ plot(ta ~ Index, tempSopron, type = "l")
 ## Regressziós trend
 lm(ta ~ Index, data = tempSopron)
 abline(9.194e+00, 3.198e-05)
+## lineáris modell eredmény objektuma
+tempSopron.lm <- lm(ta ~ Index, data = tempSopron)
+tempSopron.lm
+str(tempSopron.lm) # Mi is van az objektumban?
+tempSopron.lm$coefficients
+plot(tempSopron.lm$residuals) # Maradékok
+boxplot(tempSopron.lm$residuals) # Maradékok
+qqnorm(tempSopron.lm$residuals)
+qqline(tempSopron.lm$residuals)
+plot(names(fitted(tempSopron.lm)), fitted(tempSopron.lm)) # Maga az illesztett modell (itt egyenes)
+coef(tempSopron.lm)[2]*365*100 # A meredekségből 100 évre jutó emelkedés
+plot(tempSopron.lm)# Diagnosztikai ábrák
+summary(tempSopron.lm)# Összefoglalás
