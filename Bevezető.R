@@ -44,6 +44,9 @@ boxplot(kk13[,c("GYAKORISAG", "KARERELY")]) # Csak az objektum nevet írom át
 kk16 <- as.data.frame(read_excel("kőriskárok 2012 2024.xlsx", sheet = "2016")) ## harmadik munkalap argumentum hivatkozással szövegként
 boxplot(kk16[,c("Gyakoriság", "Kárerély")])
 
+## Beolvasás újra
+ev <- 13
+    assign(paste0("kk", ev), as.data.frame(read_excel("kőriskárok 2012 2024.xlsx", sheet = paste0("20",ev))))
 for(ev in 14:24) {
     assign(paste0("kk", ev), as.data.frame(read_excel("kőriskárok 2012 2024.xlsx", sheet = paste0("20",ev))))
 }
