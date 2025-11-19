@@ -35,3 +35,10 @@ SopDatum <- as.Date(as.character(tempSopron[,1]), format = "%Y%m%d") # Dátum fo
 head(SopDatum) # így látjuk
 deparse(head(SopDatum)) # Valójában egy szám csak, amit formáz az R
 plot(SopDatum, tempSopron$ta, lty="l")
+## Van erre külön csomag
+inastall.packages("xts")
+library(xts)
+tempSop.xts <- xts(tempSopron$ta, SopDatum)
+tempSop.xts
+plot(tempSop.xts)
+plot(tempSop.xts['1973'])
