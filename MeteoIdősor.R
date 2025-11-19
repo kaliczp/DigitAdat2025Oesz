@@ -27,3 +27,11 @@ plot(names(fitted(tempSopron.lm)), fitted(tempSopron.lm)) # Maga az illesztett m
 coef(tempSopron.lm)[2]*365*100 # A meredekségből 100 évre jutó emelkedés
 plot(tempSopron.lm)# Diagnosztikai ábrák
 summary(tempSopron.lm)# Összefoglalás
+tempSopron.lmsum <- summary(tempSopron.lm)# Összefoglalás
+str(tempSopron.lmsum)
+tempSopron.lmsum$r.squared
+## Csináljunk igazi idősort!
+SopDatum <- as.Date(as.character(tempSopron[,1]), format = "%Y%m%d") # Dátum formátum importáláa
+head(SopDatum) # így látjuk
+deparse(head(SopDatum)) # Valójában egy szám csak, amit formáz az R
+plot(SopDatum, tempSopron$ta, lty="l")
