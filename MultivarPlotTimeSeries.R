@@ -5,6 +5,7 @@ Sys.setenv(TZ="UTC")
 Tes202504.xts <- xts(Tes202504[,-(1:2)], Tes202504[,2])
 
 ## Ábra gyártás
+png("TensileTR202504.png", width= 28.2, height= 6.7, units = "cm", res = 300)
 par(las=1, mar = c(3.1,4.1,0.6,4.1))
 plot.zoo(Tes202504.xts['2025-04-13/2025-04-22',4],
          type = "n",
@@ -29,9 +30,9 @@ lines(as.zoo(Tes202504.xts['2025-04-13/2025-04-22', 2]),
          ylim = c(7.6,9.5),
          xaxs="i", yaxs="i")
 axis(4)
-par(xpd = TRUE) #Draw outside plot area
-text(x = ISOdatetime(2025,4,23,6,0,0), y = 8.5, "Strength", srt = 270)
+mtext("Tension [mA]", 4, 3, las = 0)
+legend("bottomright", legend = c("Temp.","Prec.", "Tens. 1", "Tens. 2"), lwd = c(2,4,2,2),
+       col = c("red", "blue", "orange", "green"))
+dev.off()
 
 
-
-mtext("Tension", 4, 3, las = 0)
