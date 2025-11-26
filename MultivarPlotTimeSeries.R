@@ -16,7 +16,7 @@ plot.zoo(Tes202504.xts['2025-04-13/2025-04-22',4],
          xlab = "", ylab = "Temperature ďegC",
          xaxs="i", yaxs="i")
 axis.POSIXct(1,at = c(ISOdate(2025,4,13:22,0,0),ISOdate(2025,4,22,23,50)), labels = FALSE)
-axis.POSIXct(1,at = ISOdate(2025,4,13:23), tck = 0, format="%d %b")
+axis(1, at = ISOdate(2025,4,13:22), tck = 0, labels = paste(13:22, "Apr."))
 grid(nx = NA, ny = NULL)
 lines(as.zoo(Tes202504.xts['2025-04-13/2025-04-22',4]),
       col="red", lwd = 2)
