@@ -16,10 +16,12 @@ plot.zoo(Tes202504.xts['2025-04-13/2025-04-22',4],
          xlab = "", ylab = "",
          xaxs="i", yaxs="i")
 axis.POSIXct(1,at = c(ISOdate(2025,4,13:22,0,0),ISOdate(2025,4,22,23,00)), labels = FALSE)
-axis(1, at = ISOdate(2025,4,13:22), tck = 0, labels = paste(13:22, "Apr."))
+axis(1, at = ISOdate(2025,4,13:22), tck = 0, labels = paste(13:22, "Apr."), mgp = c(3,0.5,0) )
 grid(nx = NA, ny = NULL)
-mtext("Temperature [°C]", 2, 3, at = 15, las = 0, cex = 0.9)
-mtext("Prec. [mm/day]", 2, 3, at = 2.5, las = 0, cex = 0.9)
+mtext("Temperature", 2, 3, at = 15, las = 0)
+mtext("[°C]", 2, 2, at = 15, las = 0)
+mtext("Precipitation", 2, 3, at = 2.5, las = 0)
+mtext("[mm/hours]", 2, 2, at = 2.5, las = 0)
 lines(as.zoo(Tes202504.xts['2025-04-13/2025-04-22',4]),
       col="red", lwd = 2)
 lines(as.zoo(Tes202504.xts['2025-04-13/2025-04-22',3]),
@@ -38,6 +40,6 @@ lines(as.zoo(Tes202504.xts['2025-04-13/2025-04-22', 2]),
 axis(4, at = c(7.9,8.4,8.9,9.4))
 mtext("Tension [mA]", 4, 3, las = 0)
 legend(ISOdate(2025,4,20), y = 8.5, legend = c("Temp.","Prec.", "Tés 1", "Tés 2"), lwd = c(2,4,2,2),
-       ncol = 2, cex = 0.9,
+       ncol = 2,
        col = c("red", "blue", "orange", "green"))
 dev.off()
