@@ -38,7 +38,7 @@ lines(as.zoo(Tes202504.xts['2025-04-13/2025-04-22', 2]),
          col = "green", lwd = 2,
          xaxs="i", yaxs="i")
 axis(4, at = c(7.9,8.4,8.9,9.4))
-mtext("Tension [mA]", 4, 3, las = 0)
+mtext("Tensile force sensors output [mA]", 4, 3, las = 0)
 legend(ISOdate(2025,4,20), y = 8.5, legend = c("Temp.","Prec.", "Tés 1", "Tés 2"), lwd = c(2,4,2,2),
        ncol = 2,
        col = c("red", "blue", "orange", "green"))
