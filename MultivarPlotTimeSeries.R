@@ -7,8 +7,8 @@ Tes202504.xts <- xts(Tes202504[,-(1:2)], Tes202504[,2])
 ## Ábra gyártás
 Sys.setenv(LANG = "en_US.UTF-8")
 
-png("TensileTR202504.png", width= 28.2, height= 6.7, units = "cm", res = 300)
-par(las=1, mar = c(3.1,4.1,0.6,4.1))
+png("TensileTR202504.png", width= 28.2, height= 6.7, units = "cm", res = 300, pointsize = 10)
+par(las=1, mar = c(2.1,4.1,0.6,4.1))
 plot.zoo(Tes202504.xts['2025-04-13/2025-04-22',4],
          type = "n",
          xaxt = "n",
@@ -25,7 +25,7 @@ lines(as.zoo(Tes202504.xts['2025-04-13/2025-04-22',4]),
 lines(as.zoo(Tes202504.xts['2025-04-13/2025-04-22',3]),
       lend = 1,
       col="blue", lwd = 5, type = "h")
-par(new = TRUE, mar = c(3.1,4.1,0.6,4.1))
+par(new = TRUE)
 plot.zoo(Tes202504.xts['2025-04-13/2025-04-22', 1],
          col = "orange", lwd = 2,
          xlab = "", ylab = "",
